@@ -11,18 +11,7 @@
 
 # deploy files primarily using Git
 
-# @variables == system (aka depends-on)
-GIT=/usr/bin/git
-SSH=/usr/bin/ssh
-GIT_HASH=$($GIT rev-parse --short HEAD)
-
-# @variables == user, set as desired
-USER="root"
-HOST="8.8.8.8"
-HTTP_PATH=/path/to/the/backup/folder/on/this/server
-DLY_PATH=/prod/deploy # the path on the server
-GIT_BRN="staging" #branch that is called on the other server
-ADMIN_EMAIL="you@something.com"
+source ../staging.conf
 
 # naviaget to  the web root dir
 cd  $HTTP_PATH

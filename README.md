@@ -30,6 +30,10 @@ Please see the Appendix for list of needed variables to make things hum.
 `chmod +x bash-deploy/master.sh`
 `./bash-deploy/master.sh`
 
+Set the respective configurations in prod/prod.conf (that directory lives on the server to be deployed to), set the needed configuration in staging/staging.conf (that directory sits on the server/unit being deployed from ).
+
+run `./master.sh`
+
 The directory "prod/" sits on the server being deployed to, and directory "staging" sits on the test/staging server.
 
 ### <a name="appendix"></a> Appendix 

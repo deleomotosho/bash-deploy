@@ -10,35 +10,7 @@
 
 # dumps mysql based on the input and cleans up the output
 
-
-
-# @variables: SYSTEM a.k.a dependencies
-TIMESTAMP=$(date +%a.%F)
-MYSQL=/usr/bin/mysql
-MYSQLDUMP=/usr/bin/mysqldump
-GREP=/bin/grep
-SED=/bin/sed
-XARGS=/usr/bin/xargs
-SCP=/usr/bin/scp
-SSH=/usr/bin/ssh
-DIFF=/usr/bin/diff
-LS=/bin/ls
-MAIL=/usr/bin/mail
-
-# == set this accordingly ==
-DB_USER="root"   #for the local DB user
-DB_PWD="pssttttt!" #db password
-PATH_SAVE=//path/where/deploy/db
-SCP_DIR=/path/that/exist/deploy/db #!!!important ==>  these path must exist on the hosts, scripts does not check
-
-
-# it is best to have password-less access to machines that would want to use this,
-# assuming you already generated a key: 
-
-RMT_USER="root"
-RMT_HOST="8.8.8.8" 
-RMT_DB_NAME="my-production-db"
-ADMIN_EMAIL="you@something.com"
+source ../staging.conf
 
 # ++++ Let's Rock and Roll  ++++
 echo -n "What database would you like to dump: "
@@ -55,13 +27,6 @@ fi
 ## clean the dump, prep it with values that will be deployed
 ## looks in the dir specified above, specifically the most recently dumped SQL
 clean_dump(){
-#site_url
-  STR1="needle" 	#find this
-  STR1_RL="pin" 		#replace with this
-
-  STR2="american"
-  STR2_RL="african-heritage"
-
 $GREP -rl $STR1 $PATH_SAVE/*.sql | $XARGS $SED -i s/$STR1/$STR1_RL/g ; $GREP -rl $STR2 $PATH_SAVE/*.sql | $XARGS $SED -i s/$STR2/$STR2_RL/g; 
 }
 

@@ -8,14 +8,7 @@
 # GPLv3 : http://www.gnu.org/licenses/gpl-3.0.html
 
 
-# @variaeble ==system
-MYSQL=/usr/bin/mysql
-
-# @variables ==user, adjust as needed
-DB_USER="root"
-DB_PWD="pssstttt!"
-DB_NAME="my-production-db"
-BAK_PATH=/path/to/database-backups
+source ../prod.conf
 
 cd $BAK_PATH
 echo "This are the available backups: "; ls

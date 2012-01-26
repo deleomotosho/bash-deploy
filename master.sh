@@ -7,12 +7,8 @@
 # Copyright (c) 2012 Dele Omotosho
 # GPLv3 : http://www.gnu.org/licenses/gpl-3.0.html
 
-
-# @variables ==system
-# // nada
-
 # @variables ==user
-# set this accordingly to the path
+# set this accordingly to the path, this primarily calls staging..
 SCR_PATH=staging
 
 echo " " 

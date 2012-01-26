@@ -8,17 +8,7 @@
 # Copyright (c) 2012 Dele Omotosho
 # GPLv3 : http://www.gnu.org/licenses/gpl-3.0.html
 
-
-# @variable ==system
-GIT=/usr/bin/git
-SSH=/usr/bin/ssh
-
-# @variables ==user, adjust as needed
-USER="root"
-HOST="8.8.8.8"
-DLY_PATH=/path/to/deploy
-HTTP_PATH=/var/www/vhosts/my-something-site
-HOST_HTTP=/var/www/vhosts/verivo.com/verivo.com/httpdocs
+source ../staging.conf
 
 cd $HTTP_PATH
 
@@ -35,7 +25,7 @@ if [ -z "$GIT_SHA1" ]; then
 
 else 
 echo "Reverting..."
-$SSH -l $USER $HOST  "cd '$HOST_HTTP' && '$GIT' checkout '$GIT_SHA1'"
+$SSH -l $USER $HOST  "cd '$HOST_HTTP' && '$GIT' reset --hard '$GIT_SHA1'"
 fi
 
 
