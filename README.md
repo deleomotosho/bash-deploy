@@ -20,12 +20,12 @@ Please see the Appendix for list of needed variables to make things hum.
 + You codes are under "Git" source control
 + You don't mind editing this source code, there are a few variables to set to make things work
 
-### <a name="system-needs"></a> What you need on your system ### {#system-needs}
+### <a name="system-needs"></a> What you need on your system
 + Obviously servers or computers running some *nix variant.
 + "Git" on all servers.
 + SSH server & client
 
-### <a name="how-to"></a>How to Use {#how-to}
+### <a name="how-to"></a>How to Use 
 `git clone git@github.com:delomos/bash-deploy`
 `chmod +x bash-deploy/master.sh`
 `./bash-deploy/master.sh`
